@@ -6,4 +6,14 @@ Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
 # MovieProjectDevF
+
+## Notes
+
+react-bootstrap \* check npm
+check props to change component text
+
+check react "hooks" useState useEffect useContext.
+
+check react router dom reactrouter.com

@@ -4,9 +4,9 @@
 
 
 const url = "http://192.168.0.2:3333/fortunejson"; // JSON resource URL
-const fortuneButton = document.getElementById('FortuneButton');
+const fortuneBoton = document.getElementById("fortuneBoton");
 
-fortuneButton.addEventListener('click', handleClick, false);
+//fortuneBoton.addEventListener('click', handleClick, false);
 
 const fortunetextElement = document.getElementById("fortuneText");
 const fortunetypeElement = document.getElementById("fortuneType");
