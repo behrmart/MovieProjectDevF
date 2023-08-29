@@ -20,9 +20,7 @@ const Fortune = () => {
           })
         .then ((data) => {
             setData(data);
-            // Process and display the parsed JSON data
             console.log("JSON data fortunetext[1] :" + data.fortunetext[1]);
-            //fortunetextElement.innerHTML = fortunetext[1].replace(/\n/g, "<br>"); //Replace \n with br
             setLoading(false);
           })
           .catch(error => {
@@ -32,19 +30,27 @@ const Fortune = () => {
         }
     }, []);
 
+    
+
+
     if (loading){
         return (
             <>
-                <div className="spinner-border text-warning" role="status">
-                    <span className="visually-hidden">Loading...</span>
+                <div className='p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3 text-center'>
+                    <div className="spinner-border text-warning" role="status">
+                        <span className="visually-hidden">Loading...</span>
+                    </div>
                 </div>
             </>
         )
     } else {
         return (
             <>
-                <p>{data.fortunetext[1]}</p>
-                <p>{data.fortunetype}</p>
+                <div className="p-3 text-success-emphasis bg-success-subtle border border-success-subtle rounded-3 text-center">
+                        <p className = "text-warning-emphasis">{data.fortunetext[1]}</p>
+                        <p className = "text-success-emphasis">{data.fortunetype}</p>
+                </div>
+                
             </>
         )
     }
