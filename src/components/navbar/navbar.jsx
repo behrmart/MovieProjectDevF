@@ -11,7 +11,7 @@ function Navbar() {
         <div className="container-fluid">
         <a className="navbar-brand">Movie Project Dev.F</a>
         <span className="navbar-text">
-          Kata FrontEnd por Bernardo F. Martínez Meave
+          <span className="text-primary-emphasis">Dev.F Kata FrontEnd</span> por <span className='text-warning-emphasis'>Bernardo F. Martínez Meave</span>
         </span>
         </div>
     </nav>

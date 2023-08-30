@@ -3,7 +3,7 @@ import React from 'react'
 const CardComponent = (props) => {
     return (
         <>
-            <div className="card p-2 bg-primary-subtle border border-primary-subtle rounded-3">
+            <div className="card p-3 bg-primary-subtle border border-primary-subtle rounded-3">
                 <img src={props.portada} className="card-img-top"/>
                 <div className="card-body">
                     <h5 className="card-title text-primary-emphasis">{props.titulo}</h5>
