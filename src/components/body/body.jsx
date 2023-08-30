@@ -11,12 +11,7 @@ const Body = () => {
   return (
     <>
        <div className='container-fluid p-sm-2 p-md-4'>
-        <h3>Movies Container</h3>
-        <div className="row">
-          <div className="col-4"><MovieCard /></div>
-          <div className="col-4"><MovieCard /></div>
-          <div className="col-4"><MovieCard /></div>  
-        </div>
+        <MovieCard />
         <div className="container-fluid p-sm-2 p-md-4">
             <button className="btn btn-outline-danger" onClick={() => setCount((count) => count + 1)}> count is {count} </button>
         </div>
