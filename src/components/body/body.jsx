@@ -12,9 +12,6 @@ const Body = (props) => {
     <>
        <div className='container-fluid p-sm-2 p-md-4'>
         <MovieCard genero = {props.genero} key = {props.genero} />
-        <div className="container-fluid p-sm-2 p-md-4">
-            <button className="btn btn-outline-danger" onClick={() => setCount((count) => count + 1)}> count is {count} </button>
-        </div>
        </div>
     
     </>

@@ -55,9 +55,8 @@ const MovieCard = (props) => {
             <h1 className="text-center text-warning-emphasis bg-warning-subtle border border-warning-subtle rounded-3 p-2">{data.genero} Movies</h1>
             <div className="container-fluid">
               <div className="row mb-5 text-center">
-                <div className="col">
-                  <input type="text" onChange={handlerSearch} className="search" placeholder="pelicula" />
-                </div>
+                <div className="col-md-4"></div>
+                <div className="col-md-4"><input className="form-control form-control-lg search" type="text" placeholder="Buscar Película" aria-label="form control" onChange={handlerSearch} /></div>
               </div>
               <div className="row row-cols-3">
                 {pelisFilter.map((movie, index)=> {
