@@ -11,7 +11,7 @@ const Body = () => {
   return (
     <>
        <div className='container-fluid p-sm-2 p-md-4'>
-        <MovieCard />
+        <MovieCard genero = "comedia" key = {"comedia"} />
         <div className="container-fluid p-sm-2 p-md-4">
             <button className="btn btn-outline-danger" onClick={() => setCount((count) => count + 1)}> count is {count} </button>
         </div>

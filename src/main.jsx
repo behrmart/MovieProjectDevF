@@ -1,16 +1,41 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import Navbar from './components/navbar/navbar.jsx'
-import Footer from './components/footer/footer.jsx'
-import Body from './components/body/body.jsx'
-import Fortune from './components/fortune/fortune.jsx'
+import AppMain from './app-main';
+import Fortune from './components/fortune/fortune';
+import Body from './components/body/body';
 
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom"; // React Router
+
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <AppMain />,
+    errorElement: <h1>Not Found 404</h1>,
+    children: [
+      {
+        path:"/fortune",
+        element: <Fortune />
+      },
+      {
+        path:"/comedia",
+        element: <Body />
+      },
+      ,
+      {
+        path:"/independientes",
+        element: <Body />
+      }
+    ]
+  },
+]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Navbar />
-    <Body />
-    <Fortune />
-    <Footer />
+    <RouterProvider router={router} />    
   </React.StrictMode>
 )
+

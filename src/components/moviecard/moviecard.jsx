@@ -2,24 +2,42 @@ import { useState, useEffect } from 'react'
 import CardComponent from '../card/card.jsx';
 import './moviecard.css'
 //import movie1 from '../../assets/movie1.jpg'
-const MovieURL = "https://api-pelis-back.onrender.com/comedia"
+const MovieURL = "https://api-pelis-back.onrender.com/"
 
-const MovieCard = () => {
+const MovieCard = (props) => {
 
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState();
+  const [pelisFilter, setPelisFilter] = useState([]);
+  const [searchState, setSearch] = useState("");
+
+  let endpointURL = MovieURL + props.genero;
 
   useEffect(() => {
     if (loading) {
-      fetch(MovieURL)
+      fetch(endpointURL)
         .then((response) => response.json())
         .then((data) => {
           console.log(data);
           setData(data);
+          setPelisFilter(data.peliculas); /* Debo inicializar el estado de peliculas filtradas en un inicio */
           setLoading(false);
         });
     }
   }, []);
+
+  const handlerSearch = (e) => {
+    let value = e.target.value;
+    setSearch(value);
+
+    if (!value) {
+      setPelisFilter(data.peliculas);
+    } else {
+      const filterMovies = data.peliculas.filter((movie) => movie.titulo.toLowerCase().includes(searchState.toLowerCase()));
+      setPelisFilter(filterMovies);
+      console.log(pelisFilter);
+    }
+  }
 
   if (loading){
     return (
@@ -36,8 +54,13 @@ const MovieCard = () => {
         <>
             <h1 className="text-center text-warning-emphasis bg-warning-subtle border border-warning-subtle rounded-3 p-2">{data.genero} Movies</h1>
             <div className="container-fluid">
+              <div className="row mb-5 text-center">
+                <div className="col">
+                  <input type="text" onChange={handlerSearch} className="search" placeholder="pelicula" />
+                </div>
+              </div>
               <div className="row row-cols-3">
-                {data.peliculas.map((movie, index)=> {
+                {pelisFilter.map((movie, index)=> {
                   return (
                     <div className="col cardHover py-2">
                         <CardComponent key={index} titulo={movie.titulo} portada={movie.portada} sinopsis={movie.sinopsis} duracion={movie.duracion} actor1={movie.actores[0]} actor2={movie.actores[1]} actor3={movie.actores[2]}/>
