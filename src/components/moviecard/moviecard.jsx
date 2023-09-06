@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import CardComponent from '../card/card.jsx';
 import './moviecard.css'
-//import movie1 from '../../assets/movie1.jpg'
+
 const MovieURL = "https://api-pelis-back.onrender.com/"
 
 const MovieCard = (props) => {
@@ -63,7 +63,7 @@ const MovieCard = (props) => {
                 {pelisFilter.map((movie, index)=> {
                   return (
                     <div className="col cardHover py-2">
-                        <CardComponent key={index} titulo={movie.titulo} portada={movie.portada} sinopsis={movie.sinopsis} duracion={movie.duracion} actor1={movie.actores[0]} actor2={movie.actores[1]} actor3={movie.actores[2]}/>
+                        <CardComponent key={index} genero={movie.genero} titulo={movie.titulo} portada={movie.portada} sinopsis={movie.sinopsis} duracion={movie.duracion} actor1={movie.actores[0]} actor2={movie.actores[1]} actor3={movie.actores[2]}/>
                     </div>
                   )
                 })}

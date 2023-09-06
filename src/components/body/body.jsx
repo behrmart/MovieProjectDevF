@@ -5,13 +5,13 @@ import MovieCard from '../moviecard/moviecard.jsx'
 
 
 
-const Body = () => {
+const Body = (props) => {
   const [count, setCount] = useState(0)
 
   return (
     <>
        <div className='container-fluid p-sm-2 p-md-4'>
-        <MovieCard genero = "comedia" key = {"comedia"} />
+        <MovieCard genero = {props.genero} key = {props.genero} />
         <div className="container-fluid p-sm-2 p-md-4">
             <button className="btn btn-outline-danger" onClick={() => setCount((count) => count + 1)}> count is {count} </button>
         </div>

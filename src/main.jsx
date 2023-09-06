@@ -22,15 +22,19 @@ const router = createBrowserRouter([
       },
       {
         path:"/comedia",
-        element: <Body />
+        element: <Body genero="comedia" key={"comedia"}/>
       },
       ,
       {
         path:"/independientes",
-        element: <Body />
+        element: <Body genero="independientes" key={"independientes"}/>
       }
     ]
   },
+  /* {
+    path: ":genero/:pelicula",
+    element: <DetailMovie key={2}/>,
+  } */
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(

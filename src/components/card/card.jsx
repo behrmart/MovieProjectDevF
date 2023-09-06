@@ -1,6 +1,15 @@
-import React from 'react'
+import React, {useState} from 'react'
+import { Link } from 'react-router-dom';
+import { FaRegHeart, FaHeart } from "react-icons/fa"; // For Like heart
+
 
 const CardComponent = (props) => {
+    const [like, setLike] = useState(false);
+
+    const handlerLike = () => { //Like on/off
+        setLike(!like);
+      }
+
     return (
         <>
             <div className="card p-3 bg-primary-subtle border border-primary-subtle rounded-3">
@@ -16,6 +25,12 @@ const CardComponent = (props) => {
                     <li className="list-group-item">{props.actor2}</li>
                     <li className="list-group-item">{props.actor3}</li>
                 </ul>
+                <div className='container-fluid p-2 text-danger-emphasis'>
+                    {like ? <FaHeart onClick={handlerLike} className='likeActive'/>:  <FaRegHeart onClick={handlerLike}/>}
+                </div>
+                {/* <Link to={`/${props.movie.genero}/${props.movie.titulo}`} state={props.movie} >
+                    ver detalle
+                </Link> */}
             </div>
         </>
     )
