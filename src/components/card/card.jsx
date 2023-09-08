@@ -1,14 +1,26 @@
 import React, {useState} from 'react'
-import { Link } from 'react-router-dom';
 import { FaRegHeart, FaHeart } from "react-icons/fa"; // For Like heart
+import MyModal from '../modal/modal';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const CardComponent = (props) => {
     const [like, setLike] = useState(false);
+    const [showModal, setShowModal] = useState(false);
 
     const handlerLike = () => { //Like on/off
         setLike(!like);
-      }
+      };
+
+    const handleShowModal = () => {
+    setShowModal(true);
+    };
+
+    const handleHideModal = () => {
+    setShowModal(false);
+    };
+
+
 
     return (
         <>
@@ -25,13 +37,16 @@ const CardComponent = (props) => {
                     <li className="list-group-item">{props.actor2}</li>
                     <li className="list-group-item">{props.actor3}</li>
                 </ul>
+                
+                <button type="button" className="btn btn-warning" onClick={handleShowModal}>Open Modal</button>
+                <MyModal show={showModal} onHide={handleHideModal} />
+
                 <div className='container-fluid p-2 text-danger-emphasis'>
                     {like ? <FaHeart onClick={handlerLike} className='likeActive'/>:  <FaRegHeart onClick={handlerLike}/>}
-                </div>
-                {/* <Link to={`/${props.movie.genero}/${props.movie.titulo}`} state={props.movie} >
-                    ver detalle
-                </Link> */}
+                </div> 
             </div>
+
+           
         </>
     )
 }

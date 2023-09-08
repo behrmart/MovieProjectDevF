@@ -59,10 +59,20 @@ const MovieCard = (props) => {
                 <div className="col-md-4"><input className="form-control form-control-lg search" type="text" placeholder="Buscar Película" aria-label="form control" onChange={handlerSearch} /></div>
               </div>
               <div className="row row-cols-3">
-                {pelisFilter.map((movie, index)=> {
+                {pelisFilter.map((movie)=> {
+                  const uniqueKey = `${movie.genero}_${movie.titulo}`; // Generate unique key for each card.
                   return (
-                    <div className="col cardHover py-2">
-                        <CardComponent key={index} genero={movie.genero} titulo={movie.titulo} portada={movie.portada} sinopsis={movie.sinopsis} duracion={movie.duracion} actor1={movie.actores[0]} actor2={movie.actores[1]} actor3={movie.actores[2]}/>
+                    <div className="col cardHover py-2" key={uniqueKey}>
+                        <CardComponent 
+                        
+                          genero={movie.genero} 
+                          titulo={movie.titulo} 
+                          portada={movie.portada} 
+                          sinopsis={movie.sinopsis} 
+                          duracion={movie.duracion} 
+                          actor1={movie.actores[0]} 
+                          actor2={movie.actores[1]} 
+                          actor3={movie.actores[2]}/>
                     </div>
                   )
                 })}

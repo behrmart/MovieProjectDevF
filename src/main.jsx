@@ -3,11 +3,13 @@ import ReactDOM from 'react-dom/client'
 import AppMain from './app-main';
 import Fortune from './components/fortune/fortune';
 import Body from './components/body/body';
+import MovieDetail from './components/moviedetail/moviedetail';
 
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom"; // React Router
+
 
 
 const router = createBrowserRouter([
@@ -28,13 +30,13 @@ const router = createBrowserRouter([
       {
         path:"/independientes",
         element: <Body genero="independientes" key={"independientes"}/>
-      }
+      },
+      {
+        path: ":genero/:pelicula",
+        element: <MovieDetail key={2}/>,
+      } 
     ]
   },
-  /* {
-    path: ":genero/:pelicula",
-    element: <DetailMovie key={2}/>,
-  } */
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
