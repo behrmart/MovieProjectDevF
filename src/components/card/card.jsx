@@ -38,15 +38,16 @@ const CardComponent = (props) => {
                     <li className="list-group-item">{props.actor3}</li>
                 </ul>
                 
-                <button type="button" className="btn btn-warning" onClick={handleShowModal}>Open Modal</button>
-                <MyModal show={showModal} onHide={handleHideModal} />
+                 <button type="button" className="btn btn-warning" onClick={handleShowModal}>Más Detalles</button>
+                {console.log(props.titulo + " show modal: " + showModal)}
+                <MyModal show={showModal} onHide={handleHideModal} /> 
+
 
                 <div className='container-fluid p-2 text-danger-emphasis'>
                     {like ? <FaHeart onClick={handlerLike} className='likeActive'/>:  <FaRegHeart onClick={handlerLike}/>}
                 </div> 
             </div>
-
-           
+        
         </>
     )
 }

@@ -18,7 +18,7 @@ const MovieCard = (props) => {
       fetch(endpointURL)
         .then((response) => response.json())
         .then((data) => {
-          console.log(data);
+          //console.log(data);
           setData(data);
           setPelisFilter(data.peliculas); /* Debo inicializar el estado de peliculas filtradas en un inicio */
           setLoading(false);
@@ -35,7 +35,7 @@ const MovieCard = (props) => {
     } else {
       const filterMovies = data.peliculas.filter((movie) => movie.titulo.toLowerCase().includes(searchState.toLowerCase()));
       setPelisFilter(filterMovies);
-      console.log(pelisFilter);
+      //console.log(pelisFilter);
     }
   }
 
@@ -64,7 +64,6 @@ const MovieCard = (props) => {
                   return (
                     <div className="col cardHover py-2" key={uniqueKey}>
                         <CardComponent 
-                        
                           genero={movie.genero} 
                           titulo={movie.titulo} 
                           portada={movie.portada} 

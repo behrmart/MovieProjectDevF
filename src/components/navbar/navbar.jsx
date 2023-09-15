@@ -13,7 +13,7 @@ function Navbar() {
         <a className="navbar-brand">Movie Project Dev.F</a>
         <NavLink to="/independientes">Independientes</NavLink>
         <NavLink to="/comedia">Comedia</NavLink>
-        <NavLink to="/fortune">Fortune!</NavLink>
+        {/* <NavLink to="/fortune">Fortune!</NavLink> */}
         <span className="navbar-text">
           <span className="text-primary-emphasis">Dev.F Kata FrontEnd</span> por <span className='text-warning-emphasis'>Bernardo F. Martínez Meave</span>
         </span>

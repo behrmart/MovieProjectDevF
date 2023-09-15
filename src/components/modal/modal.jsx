@@ -2,11 +2,12 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const MyModal = ({ show, onHide}) => {
-    console.log("reached modal");
+    console.log("reached modal: show:" + show + " onHide:" + onHide);
+
     return (
     
         <>
-        <div className={`modal ${show ? 'show' : ''}`} tabIndex="-1" role="dialog">
+        <div className={`modal ${show ? 'show' : ''}`} tabIndex="-1" role="dialog" >
             <div className="modal-dialog" role="document">
                 <div className="modal-content">
                 <div className="modal-header">
@@ -25,6 +26,8 @@ const MyModal = ({ show, onHide}) => {
                 </div>
             </div>
         </div>
+
+            
         </>
     )
 };

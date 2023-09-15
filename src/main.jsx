@@ -4,6 +4,8 @@ import AppMain from './app-main';
 import Fortune from './components/fortune/fortune';
 import Body from './components/body/body';
 import MovieDetail from './components/moviedetail/moviedetail';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 import {
   createBrowserRouter,
@@ -40,8 +42,8 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+   <React.StrictMode>
     <RouterProvider router={router} />    
-  </React.StrictMode>
+   </React.StrictMode>
 )
 
