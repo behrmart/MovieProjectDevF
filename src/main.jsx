@@ -36,9 +36,10 @@ const router = createBrowserRouter([
       {
         path: ":genero/:pelicula",
         element: <MovieDetail key={2}/>,
-      } 
+      }
     ]
   },
+  
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(

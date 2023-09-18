@@ -1,12 +1,13 @@
 import React, {useState} from 'react'
 import { FaRegHeart, FaHeart } from "react-icons/fa"; // For Like heart
-import MyModal from '../modal/modal';
+// import MyModal from '../modal/modal';
+import { Link } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const CardComponent = (props) => {
     const [like, setLike] = useState(false);
-    const [showModal, setShowModal] = useState(false);
+    //const [showModal, setShowModal] = useState(false);
 
     const handlerLike = () => { //Like on/off
         setLike(!like);
@@ -33,14 +34,13 @@ const CardComponent = (props) => {
 
                 </div>
                 <ul className="list-group list-group-flush bg-warning-subtle border border-warning-subtle rounded-3">
-                    <li className="list-group-item">{props.actor1}</li>
-                    <li className="list-group-item">{props.actor2}</li>
-                    <li className="list-group-item">{props.actor3}</li>
+                    <li className="list-group-item">Director</li>
+                    <li className="list-group-item">{props.director}</li>
                 </ul>
-                
-                 <button type="button" className="btn btn-warning" onClick={handleShowModal}>Más Detalles</button>
-                {console.log(props.titulo + " show modal: " + showModal)}
-                <MyModal show={showModal} onHide={handleHideModal} /> 
+
+                <Link to={`/${props.genero}/${props.titulo}`} state={props} >
+                    ver detalle
+                </Link>
 
 
                 <div className='container-fluid p-2 text-danger-emphasis'>

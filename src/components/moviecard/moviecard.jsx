@@ -63,15 +63,19 @@ const MovieCard = (props) => {
                   const uniqueKey = `${movie.genero}_${movie.titulo}`; // Generate unique key for each card.
                   return (
                     <div className="col cardHover py-2" key={uniqueKey}>
+                        
                         <CardComponent 
                           genero={movie.genero} 
                           titulo={movie.titulo} 
                           portada={movie.portada} 
                           sinopsis={movie.sinopsis} 
-                          duracion={movie.duracion} 
+                          duracion={movie.duracion}
+                          director={movie.director}
                           actor1={movie.actores[0]} 
                           actor2={movie.actores[1]} 
-                          actor3={movie.actores[2]}/>
+                          actor3={movie.actores[2]}
+                          calificacion={movie.calificacion} 
+                          anio={movie.anio} />
                     </div>
                   )
                 })}
