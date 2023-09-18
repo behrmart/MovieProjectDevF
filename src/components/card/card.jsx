@@ -31,16 +31,18 @@ const CardComponent = (props) => {
                     <h5 className="card-title text-primary-emphasis">{props.titulo}</h5>
                     <p className="card-text">{props.sinopsis}</p>
                     <p className="card-text text-success-emphasis ">{props.duracion}</p>
-
+                    <ul className="list-group list-group-flush bg-warning-subtle border border-warning-subtle rounded-3">
+                        <li className="list-group-item">Director</li>
+                        <li className="list-group-item">{props.director}</li>
+                    </ul>
                 </div>
-                <ul className="list-group list-group-flush bg-warning-subtle border border-warning-subtle rounded-3">
-                    <li className="list-group-item">Director</li>
-                    <li className="list-group-item">{props.director}</li>
-                </ul>
+                
 
-                <Link to={`/${props.genero}/${props.titulo}`} state={props} >
-                    ver detalle
-                </Link>
+                <div className='card-footer text-center'>
+                    <Link to={`/${props.genero}/${props.titulo}`} state={props} >
+                        <button type="button" className="btn btn-warning text-center p-2">Ver mas Detalles</button>
+                    </Link>
+                </div>
 
 
                 <div className='container-fluid p-2 text-danger-emphasis'>

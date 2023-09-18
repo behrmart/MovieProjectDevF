@@ -21,6 +21,10 @@ const router = createBrowserRouter([
     errorElement: <h1>Not Found 404</h1>,
     children: [
       {
+        path:"/",
+        element: <Body genero="comedia" key={"comedia"} />
+      },
+      {
         path:"/fortune",
         element: <Fortune />
       },

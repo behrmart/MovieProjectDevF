@@ -10,12 +10,12 @@ function Navbar() {
     
     <nav className="navbar bg-primary-subtle">
         <div className="container-fluid">
-        <a className="navbar-brand">Movie Project Dev.F</a>
+        <a className="navbar-brand">Proyecto IMDB</a>
         <NavLink to="/independientes">Independientes</NavLink>
         <NavLink to="/comedia">Comedia</NavLink>
         {/* <NavLink to="/fortune">Fortune!</NavLink> */}
         <span className="navbar-text">
-          <span className="text-primary-emphasis">Dev.F Kata FrontEnd</span> por <span className='text-warning-emphasis'>Bernardo F. Martínez Meave</span>
+          <span className="text-primary-emphasis">Dev.F</span> <span className='text-warning-emphasis'>Kata FrontEnd</span>
         </span>
         </div>
     </nav>
